@@ -36,6 +36,11 @@ User.init(
         len: [8],
       },
     },
+    adminStatus: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
   },
   {
     // Hooks are used so that if a user is created or updated, the password is encrypted before being stored in the database.

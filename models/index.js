@@ -1,15 +1,19 @@
 const User = require('./User');
-const Project = require('./Project');
+const Clothing = require('./Clothing');
+const Size = require('./Size');
 
-// Creates a relationship between User and Project model, with the User having a "has many" relationship with Project model.
-User.hasMany(Project, {
-  foreignKey: 'user_id',
+// // Creates a relationship between Clothing and Size models.
+Clothing.hasMany(Size, {
+  foreignKey: 'clothing_id',
   onDelete: 'CASCADE'
 });
 
-// Creates a relationship between User and Project model, with a "belongs to" relationship of the Project to the User.
-Project.belongsTo(User, {
-  foreignKey: 'user_id'
+Size.belongsTo(Clothing, {
+  foreignKey: 'clothing_id'
 });
 
-module.exports = { User, Project };
+module.exports = {
+  User,
+  Clothing,
+  Size
+};

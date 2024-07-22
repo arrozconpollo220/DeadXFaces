@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
+const { User, Clothing, Size } = require('../models');
 
 const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+const clothingData = require('./clothingData.json');
+const sizeData = require('./sizeData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,10 +13,15 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+  const clothing = await Clothing.bulkCreate(clothingData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  for (const size of sizeData) {
+    await Size.create({
+      ...size,
+      clothing_id: clothing[Math.floor(Math.random() * clothing.length)].id,
     });
   }
 

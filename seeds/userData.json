@@ -1,17 +1,32 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
-    "password": "password12345"
+    "name": "Alex",
+    "email": "alex@deadxfaces.com",
+    "password": "alexalex",
+    "adminStatus": true
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "name": "Jason",
+    "email": "jason@deadxfaces.com",
+    "password": "jasonjason",
+    "adminStatus": true
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "name": "Keith",
+    "email": "keith@deadxfaces.com",
+    "password": "keithkeith",
+    "adminStatus": true
+  },
+  {
+    "name": "Ricardo",
+    "email": "ricardo@deadxfaces.com",
+    "password": "ricardoricardo",
+    "adminStatus": true
+  },
+  {
+    "name": "Dave",
+    "email": "dave@bootcamp.com",
+    "password": "davedave",
+    "adminStatus": false
   }
 ]

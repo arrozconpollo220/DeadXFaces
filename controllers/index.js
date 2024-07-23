@@ -6,4 +6,5 @@ const homeroutes = require('./homeroutes')
 // When a request is made to the /api route, it will be directed to the index.js in the 'api' folder.
 router.use('/api', apiRoutes);
 router.use('/', homeroutes);
+
 module.exports = router;

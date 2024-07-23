@@ -1,60 +1,45 @@
 <html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    <title>DeadXFaces</title>
-      <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
 
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
+<head>
+  <meta charset='UTF-8' />
+  <title>DeadXFaces</title>
+  <link rel="stylesheet" href="/css/style.css">
 
-    swiper-container {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+</head>
 
-    swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 300px;
-      height: 300px;
-    }
-
-    swiper-slide img {
-      display: block;
-      width: 100%;
-    }
-  </style>
-  </head>
-
-  <header>
-
-  </header>
-
-  <body>
-    <div class='flex-column justify-space-around'>
-      <header class='display-flex justify-space-between align-center p-2'>
-        <h1>
-          DeadXFaces
-        </h1>
-      </header>
-      <main class='container container-fluid mt-5'>
+<header class='display-flex justify-space-between align-center p-2'>
+  <img src="/images/deadhead logo.jpg" />
+  <h1>DeadXFaces</h1>
+  <div>
+    <ul>
+      <li>
         <a href="/">--Home--</a>
+      </li>
+      {{#if isAdmin}}
+      <li>
         <a href="/newitem">--Add item--</a>
-        {{{body}}}
-      </main>
-    </div>
-  </body>
+      </li>
+      {{/if}}
+      <li>
+        {{#if loggedIn}}
+        <a href="/" id="logout">--Logout--</a>
+        {{else}}
+        <a href="../login">--Login--</a>
+        {{/if}}
+      </li>
+    </ul>
+  </div>
+</header>
+
+<body>
+  <div class='flex-column justify-space-around'>
+
+    <main class='container container-fluid mt-5'>
+      <a href="/">--Home--</a>
+      <a href="/newitem">--Add item--</a>
+      {{{body}}}
+    </main>
+  </div>
+</body>
 
 </html>

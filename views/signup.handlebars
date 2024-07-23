@@ -1,0 +1,35 @@
+{{!-- HTML for the sign up view --}}
+<div>
+    <h3>Sign Up</h3>
+</div>
+<div style="width: 36rem;">
+    <h5>Sign up for a new account:</h5>
+    <div>
+        <form class="signup-form">
+            <div>
+                <label for="name-input">Name: </label>
+                <div>
+                    <input type="text" id="username-input" />
+                </div>
+            </div>
+            <div>
+                <label for="email-input">Email: </label>
+                <div>
+                    <input type="text" id="email-input" />
+                </div>
+            </div>
+            <div>
+                <label for="password-input">Password: </label>
+                <div>
+                    <input type="password" id="password-input" />
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-block mt-4">
+                <button type="submit">Sign Up!</button>
+                <a href="/login"><button type="button">Login instead</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/signup.js"></script>

@@ -5,25 +5,27 @@ body {
 }
 
 body {
-  background: #eee;
+  background: #fff;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
-  color: #000;
+  color: #eee;
   margin: 0;
   padding: 0;
 }
 
 swiper-container {
   width: 100%;
-  padding-top: 50px;
+  max-height: 40%;
+  padding-top: 20px;
   padding-bottom: 50px;
-  background-color: #fff;
+  background-image: linear-gradient(#343434,#808080,#C0C0C0,#808080,#343434);
 
 }
 
 swiper-slide {
   background-position: center;
   background-size: cover;
+
   width: 200px;
   height: 200px;
 }

@@ -32,7 +32,7 @@ Clothing.init(
     },
     image_loc: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     date_created: {
       type: DataTypes.DATE,

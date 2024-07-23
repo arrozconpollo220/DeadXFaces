@@ -22,7 +22,8 @@
     "packages": "^0.0.8",
     "pg": "^8.11.3",
     "sequelize": "^6.3.5",
-    "stripe": "^16.2.0"
+    "stripe": "^16.2.0",
+    "swiper": "^11.1.5"
   },
   "devDependencies": {
     "eslint": "^7.12.1",

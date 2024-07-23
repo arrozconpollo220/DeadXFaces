@@ -1,0 +1,12 @@
+{{!-- El contenido de esta vista será insertado en el lugar de {{{body}}} en el layout principal --}}
+<div class="container">
+<h2>DEADXFACES</h2>
+<div class="articles">
+    {{#each articles}}
+    <div class="article">
+        <h3><a href="/article/{{this.id}}">{{this.title}}</a></h3>
+        <p>{{this.summary}}</p>
+    </div>
+    {{/each}}
+</div>
+</div>

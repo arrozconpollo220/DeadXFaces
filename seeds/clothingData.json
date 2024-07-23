@@ -4,48 +4,48 @@
     "price": 40.00,
     "designName": "Reflect Ski Mask (reversible)",
     "color": "Black",
-    "image_loc": "../../public/images/00skimask.png"
+    "image_loc": "/images/00skimask.png"
   },
   {
     "type": "Shirt",
     "price": 120.00,
     "designName": "Dead Club$ Puffer jacket",
     "color": "Black",
-    "image_loc": "../../public/images/01pufferjacket.png"
+    "image_loc": "/images/01pufferjacket.png"
   },
   {
     "type": "Shirt",
     "price": 75.00,
     "designName": "DEF Tiffany Blue Hoodie",
     "color": "Black",
-    "image_loc": "../../public/images/02defhoodie.png"
+    "image_loc": "/images/02defhoodie.png"
   },
   {
     "type": "Shirt",
     "price": 75.00,
     "designName": "Tie-Dye Caras Muertas Womens Hoodie",
     "color": "Blue",
-    "image_loc": "../../public/images/03carasmuertashoodie.png"
+    "image_loc": "/images/03carasmuertashoodie.png"
   },
   {
     "type": "Shirt",
     "price": 75.00,
     "designName": "Mustard OG DF Womens hoodie",
     "color": "Yellow",
-    "image_loc": "../../public/images/04ogdfhoodie.png"
+    "image_loc": "/images/04ogdfhoodie.png"
   },
   {
     "type": "Headwear",
     "price": 40.00,
     "designName": "Corduroy Mask Snap Back",
     "color": "Gray",
-    "image_loc": "../../public/images/05masksnapback.png"
+    "image_loc": "/images/05masksnapback.png"
   },
   {
     "type": "Accessory",
     "price": 27.00,
     "designName": "6 pack Hat Case",
     "color": "black",
-    "image_loc": "../../public/images/06hatbox.png"
+    "image_loc": "/images/06hatbox.png"
   }
 ]

@@ -5,7 +5,7 @@
     coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
     {{#each items}}
     <swiper-slide>
-      <img src= "{{image_loc}}" />
+      <a href="/singleItem/{{id}}"><img src="{{image_loc}} " /></a>
       <p>{{designName}}</p>
     </swiper-slide>
     {{/each}}

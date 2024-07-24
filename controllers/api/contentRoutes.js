@@ -27,8 +27,7 @@ router.put('/u', async (req, res) => {
             type: req.body.type,
             designName: req.body.designName,
             color: req.body.color,
-            price: req.body.price,
-            image_loc: "Coming Soon"
+            price: req.body.price
         },
             {
                 where: {

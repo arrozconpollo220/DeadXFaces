@@ -1,10 +1,8 @@
 {{!-- El contenido de esta vista será insertado en el lugar de {{{body}}} en el layout principal --}}
 <div class="container">
-    <h2>{{article.title}}</h2>
-    <p><strong>By:</strong> {{article.author}}</p>
-    <p><strong>Published on:</strong> {{article.date_created}}</p>
-    <div class="article-content">
-        <p>{{article.content}}</p>
-    </div>
-    <a href="/">Back to homepage</a>
+    <img src="{{singleItem.image_loc}}" />
+    <h2>{{singleItem.designName}}</h2>
+    <h3>{{singleItem.type}}</h3>
+    <h3>{{singleItem.color}}</h3>
+    <h3>$ {{singleItem.price}}</h3>
 </div>

@@ -23,6 +23,21 @@ router.get('/', async (req, res) => {
   });
 });
 
+// Get selected clothing item
+router.get('/singleItem/:id', async (req, res) => {
+  const singleItemData = await Clothing.findByPk(req.params.id, {
+  }).catch((err) => {
+    res.json(err);
+  });
+  const singleItem = singleItemData.get({ plain: true });
+  res.render('onearticle', {
+    singleItem,
+    loggedIn: req.session.loggedIn,
+    currUserId: req.session.currentUserId,
+    isAdmin: req.session.isAdmin
+  });
+});
+
 // Get selected clothing item for updating
 router.get('/update/:id', async (req, res) => {
   const singleItemData = await Clothing.findByPk(req.params.id, {

@@ -1,8 +1,19 @@
 {{!-- El contenido de esta vista será insertado en el lugar de {{{body}}} en el layout principal --}}
 <div class="container">
-    <img src="{{singleItem.image_loc}}" />
+    <div>
+        <img src="{{singleItem.image_loc}}" />
+        {{#if isAdmin}}
+        <a><button>Update Image</button></a>
+        {{/if}}
+    </div>
+
     <h2>{{singleItem.designName}}</h2>
     <h3>{{singleItem.type}}</h3>
     <h3>{{singleItem.color}}</h3>
     <h3>$ {{singleItem.price}}</h3>
+
 </div>
+
+{{#if isAdmin}}
+<a href="/update/{{singleItem.id}}"><button>Update This Item</button></a>
+{{/if}}

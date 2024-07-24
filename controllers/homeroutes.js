@@ -23,9 +23,28 @@ router.get('/', async (req, res) => {
   });
 });
 
+// Get selected clothing item for updating
+router.get('/update/:id', async (req, res) => {
+  const singleItemData = await Clothing.findByPk(req.params.id, {
+  }).catch((err) => {
+    res.json(err);
+  });
+  const singleItem = singleItemData.get({ plain: true });
+  res.render('updateitem', {
+    singleItem,
+    loggedIn: req.session.loggedIn,
+    currUserId: req.session.currentUserId,
+    isAdmin: req.session.isAdmin
+  });
+});
+
 //Simple navigation routes
-router.get('/newitem', async (req, res) => {
-  res.render('additem');
+router.get('/additem', async (req, res) => {
+  res.render('additem', {
+    loggedIn: req.session.loggedIn,
+    currUserId: req.session.currentUserId,
+    isAdmin: req.session.isAdmin
+  });
 });
 
 router.get('/login', async (req, res) => {

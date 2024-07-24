@@ -1,0 +1,37 @@
+<h3>Update item:</h3>
+
+{{#if isAdmin}}
+<div>
+    <form class="updateItemForm">
+        <input type="hidden" id="item-id" value={{singleItem.id}}>
+        <label for="type-input">Type of item: </label>
+        <div>
+            <input type="text" id="type-input" value={{singleItem.type}}>
+        </div>
+
+        <label for="design-input">Design Title: </label>
+        <div>
+            <input type="text" id="design-input" value={{singleItem.designName}}>
+        </div>
+
+        <label for="color-input">Color: </label>
+        <div>
+            <input type="text" id="color-input" value={{singleItem.color}}>
+        </div>
+
+        <label for="price-input">Price: </label>
+        <div>
+            <input type="text" id="price-input" value={{singleItem.price}}>
+        </div>
+
+        <button type="submit">Update Item</button>
+        <button type="button" class="delete-item">Delete Item</button>
+
+    </form>
+</div>
+{{else}}
+<p>This page can only be accessed by an Administrator.</p>
+{{/if}}
+
+<script src="/js/updateitem.js"></script>
+<script src="/js/deleteitem.js"></script>

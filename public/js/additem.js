@@ -6,12 +6,11 @@ const addItemProcess = async (event) => {
     const designName = document.querySelector('#design-input').value.trim();
     const color = document.querySelector('#color-input').value.trim();
     const price = document.querySelector('#price-input').value.trim();
-    const image_loc = document.querySelector('#imgloc-input').value.trim();
 
-    if (type && designName && color && price && image_loc) {
+    if (type && designName && color && price) {
         const response = await fetch('/api/content/add', {
             method: 'POST',
-            body: JSON.stringify({ type, designName, color, price, image_loc }),
+            body: JSON.stringify({ type, designName, color, price }),
             headers: { 'Content-Type': 'application/json' },
         });
 

@@ -1,20 +1,30 @@
 [
     {
-        "size": "Fits All"
+        "size_value": 0,
+        "size_name": "Fits All"
     },
     {
-        "size": "Small"
+        "size_value": 1,
+        "size_name": "Small"
     },
     {
-        "size": "Medium"
+        "size_value": 2,
+        "size_name": "Medium"
     },
     {
-        "size": "Large"
+        "size_value": 3,
+        "size_name": "Large"
     },
     {
-        "size": "X-Large"
+        "size_value": 4,
+        "size_name": "X-Large"
     },
     {
-        "size": "XX-Large"
+        "size_value": 5,
+        "size_name": "XX-Large"
+    },
+    {
+        "size_value": 6,
+        "size_name": "XXX-Large"
     }
 ]

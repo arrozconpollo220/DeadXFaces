@@ -1,7 +1,17 @@
-<h3>Update item:</h3>
-
+<h2>Update item:</h2>
 {{#if isAdmin}}
 <div>
+    <img src={{singleItem.image_loc}} style="height: 300px; width: 300px" />
+    <h3>Update image: </h3>
+    <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+        <input type="hidden" name="itemId" value={{singleItem.id}} />
+        <input type="file" name="imgFile" />
+        <input type='submit' value='Upload!' />
+    </form>
+</div>
+
+<div>
+    <h3>Update item information: </h3>
     <form class="updateItemForm">
         <input type="hidden" id="item-id" value={{singleItem.id}}>
         <label for="type-input">Type of item: </label>
@@ -29,9 +39,35 @@
 
     </form>
 </div>
+
+<div>
+    {{> availsizes}}
+</div>
+
+<div>
+    <h4>Update sizes:</h4>
+    <form class="sizeOptionsForm">
+        <label for="sizeOptions">Choose a size:</label>
+        <select id="sizeOptions" name="sizeOptions">
+            <option value= -1>----------</option>
+            <option value=0>Fits All</option>
+            <option value=1>Small</option>
+            <option value=2>Medium</option>
+            <option value=3>Large</option>
+            <option value=4>X-Large</option>
+            <option value=5>XX-Large</option>
+            <option value=6>XXX-Large</option>
+        </select>
+        <br>
+        <button type="submit">Add Size</button>
+        <button type="button" class="delete-size">Delete Size</button>
+    </form>
+</div>
 {{else}}
 <p>This page can only be accessed by an Administrator.</p>
 {{/if}}
 
 <script src="/js/updateitem.js"></script>
 <script src="/js/deleteitem.js"></script>
+<script src="/js/addsize.js"></script>
+<script src="/js/deletesize.js"></script>

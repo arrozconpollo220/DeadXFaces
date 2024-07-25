@@ -48,6 +48,31 @@ router.put('/u', async (req, res) => {
     }
 });
 
+//updates the image location
+router.put('/img', async (req, res) => {
+    try {
+        const dbUpdateImgData = await Clothing.update({
+            image_loc: req.body.image_loc,
+        },
+            {
+                where: {
+                    id: req.body.item_id
+                }
+            }
+        );
+
+        if (dbUpdateImgData[0] === 0) { // Check if any rows were updated
+            res.status(404).json({ message: 'No clothing item found with this id!' });
+        } else {
+            res.status(200).json(dbUpdateImgData);
+        }
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 // Delete existing clothing item
 router.delete('/d/:id', async (req, res) => {
     try {

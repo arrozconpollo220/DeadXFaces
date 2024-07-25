@@ -12,7 +12,11 @@ Size.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    size: {
+    size_value: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    size_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },

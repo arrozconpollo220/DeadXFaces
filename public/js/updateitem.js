@@ -17,7 +17,7 @@ const updateProcess = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace(`/`); // <------------------ needs to go to single item
+            document.location.replace(`/`);
         } else {
             alert('Failed to update item.');
         }

@@ -104,6 +104,11 @@ app.get('/checkout/success', async (req,  res) => {
   res.render('success')  //change to handlebars
 })
 
+app.get('/checkout/cancel', async (req,  res) => {
+  res.render('homepage')  //change to handlebars
+})
+
+
 app.get('/session-status', async (req, res) => {
   const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
 

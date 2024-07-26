@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     include: [
       {
         model: Size,
-        attributes: ['size']
+        attributes: ['size_name']
       },
     ]
   }).catch((err) => {
@@ -29,10 +29,13 @@ router.get('/singleItem/:id', async (req, res) => {
     include: [
       {
         model: Size,
-        attributes: ['size']
-      },
+        as: 'sizes',
+        attributes: ['size_name']
+      }
+    ],
+    order: [
+      [{ model: Size }, 'size_value', 'ASC']
     ]
-    //adding this to includes in homeroutes to get the size 
   }).catch((err) => {
     res.json(err);
   });
@@ -48,10 +51,21 @@ router.get('/singleItem/:id', async (req, res) => {
 // Get selected clothing item for updating
 router.get('/update/:id', async (req, res) => {
   const singleItemData = await Clothing.findByPk(req.params.id, {
+    include: [
+      {
+        model: Size,
+        as: 'sizes',
+        attributes: ['size_name']
+      }
+    ],
+    order: [
+      [{ model: Size }, 'size_value', 'ASC']
+    ]
   }).catch((err) => {
     res.json(err);
   });
   const singleItem = singleItemData.get({ plain: true });
+
   res.render('updateitem', {
     singleItem,
     loggedIn: req.session.loggedIn,

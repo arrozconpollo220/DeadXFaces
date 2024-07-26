@@ -12,7 +12,7 @@ CartItem.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    cartID: {
+    cart_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },

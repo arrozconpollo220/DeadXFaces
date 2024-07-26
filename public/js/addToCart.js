@@ -2,16 +2,15 @@ const addToCartProcess = async (event) => {
 
     event.preventDefault();
 
-    const cartID = 2112;
     const design = document.querySelector('#clothingDesign').value;
     const size = document.querySelector('#size-input').value;
     const price = document.querySelector('#clothingPrice').value;
     const quantity = document.querySelector('#quantity-input').value;
 
-    // if (cartID && design && size && quantity) {
+    if (design && size && price && quantity) {
         const response = await fetch('/api/cart/add', {
             method: 'POST',
-            body: JSON.stringify({ cartID, design, size, price, quantity }),
+            body: JSON.stringify({ design, size, price, quantity }),
             headers: { 'Content-Type': 'application/json' },
         });
 
@@ -21,7 +20,7 @@ const addToCartProcess = async (event) => {
             alert('Failed to add new clothing item.');
         }
     }
-// }
+}
 
 document
     .querySelector('.addToCartForm')

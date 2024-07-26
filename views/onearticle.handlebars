@@ -1,40 +1,47 @@
 {{!-- The content of this view will be inserted in place of {{{body}}} in the main layout --}}
 <div class="containerOneItem">
+    {{#if loggedIn}}
+    <h1>Cart total: ${{cartTotal}}</h1>
+    {{/if}}
+
     <div>
-        <img src="{{singleItem.image_loc}}"  alt="Item Image" width="450" height="450"/>
+        <img src="{{singleItem.image_loc}}" alt="Item Image" width="450" height="450" />
     </div>
 
     <h2>{{singleItem.designName}}</h2>
-    <h3>{{singleItem.type}}</h3>
-    <h3>{{singleItem.color}}</h3>
-    <h3>$ {{singleItem.price}}</h3>
+    <h4>Clothing Type: {{singleItem.type}}</h4>
+    <h4>Color: {{singleItem.color}}</h4>
+    <h4>Price: ${{singleItem.price}}</h4>
+    <div>
+        {{> availsizes}}
+    </div>
 
-{{!-- select sizes talk with the team about the items with no sizes its not size for mustard OG DF women hoddie
-tie dye caras muertas womens hoodie, dead club$ puffer jacket  --}}
-        <div>
-            <label for="size-input">Size: </label>
-            <select >
-                <option value = -1>----------</option>
+    {{!-- Form to add stuff to the cart --}}
+    <div>
+        {{#if loggedIn}}
+        <h3>Purchase this item!</h3>
+        <form class="addToCartForm">
+            <input type="hidden" id="itemId" value="{{singleItem.id}}" />
+            <input type="hidden" id="clothingDesign" value="{{singleItem.designName}}" />
+            <input type="hidden" id="clothingPrice" value={{singleItem.price}} />
+            <label>Size: </label>
+            <select>
+                <option value=-1>----------</option>
                 {{#each singleItem.sizes as |size|}}
-                <option id="size-input" value={{size.size_name}}>{{size.size_name}}</option>
+                <option id="size-input" value="{{size.size_name}}">{{size.size_name}}</option>
                 {{/each}}
             </select>
-        </div>
-    
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity-input" name="quantity" min="1" max="5" value="1" />
+            <button type="submit">Add to Cart</button>
+            {{else}}
+            <h4><a href="/login">Log in to purchase this item!</a></h4>
+            {{/if}}
+        </form>
+    </div>
 
-{{!-- temporary form to add stuff to the cart --}}
-    <form class="addToCartForm">
-        <input type="hidden" id="itemId" value="{{singleItem.id}}" />
-        <input type="hidden" id="clothingDesign" value="{{singleItem.designName}}" />
-        <input type="hidden" id="clothingSize" value="{{size.size_name}}" />
-        <input type="hidden" id="clothingPrice" value={{singleItem.price}} />
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity-input" name="quantity" min="1" max="5" value="1" />
-        <button type="submit">Add to Cart</button>
-    </form>
+    {{#if isAdmin}}
+    <a href="/update/{{singleItem.id}}"><button>Update This Item</button></a>
+    {{/if}}
 
-{{#if isAdmin}}
-<a href="/update/{{singleItem.id}}"><button>Update This Item</button></a>
-{{/if}}
-
-<script src="/js/addToCart.js"></script>
+    <script src="/js/addToCart.js"></script>

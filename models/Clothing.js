@@ -34,12 +34,19 @@ Clothing.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    cart_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'cartItem',
+        key: 'cartID',
+      },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
   },
+},
   {
     sequelize,
     timestamps: false,

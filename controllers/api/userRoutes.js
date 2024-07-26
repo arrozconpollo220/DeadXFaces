@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
         req.session.save(() => {
             req.session.loggedIn = true;
             req.session.currentUserId = dbUserData.dataValues.id;
+            req.session.currentCartId = Math.floor(Math.random() * 999999999);
             res.status(200).json(dbUserData);
         });
     } catch (err) {

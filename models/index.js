@@ -13,14 +13,6 @@ Size.belongsTo(Clothing, {
   foreignKey: 'clothing_id',
 });
 
-CartItem.hasMany(Clothing, {
-  foreignKey: 'cart_id'
-});
-
-Clothing.belongsTo(CartItem, {
-  foreignKey: 'cart_id'
-});
-
 module.exports = {
   User,
   Clothing,

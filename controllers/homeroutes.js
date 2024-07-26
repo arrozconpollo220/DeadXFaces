@@ -52,7 +52,8 @@ router.get('/singleItem/:id', async (req, res) => {
     singleItem,
     loggedIn: req.session.loggedIn,
     currUserId: req.session.currentUserId,
-    isAdmin: req.session.isAdmin
+    isAdmin: req.session.isAdmin,
+    cartTotal: req.session.cartTotal
   });
 });
 

@@ -57,6 +57,7 @@ router.post('/login', async (req, res) => {
             req.session.loggedIn = true;
             req.session.currentUserId = dbUserData.dataValues.id;
             req.session.isAdmin = dbUserData.dataValues.adminStatus;
+            req.session.currentCartId = Math.floor(Math.random() * 999999999);
             res
                 .status(200)
                 .json({ user: dbUserData, message: 'You are logged in!' });

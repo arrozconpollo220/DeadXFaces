@@ -26,6 +26,13 @@ router.get('/', async (req, res) => {
 // Get selected clothing item
 router.get('/singleItem/:id', async (req, res) => {
   const singleItemData = await Clothing.findByPk(req.params.id, {
+    include: [
+      {
+        model: Size,
+        attributes: ['size']
+      },
+    ]
+    //adding this to includes in homeroutes to get the size 
   }).catch((err) => {
     res.json(err);
   });

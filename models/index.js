@@ -5,11 +5,11 @@ const Size = require('./Size');
 // // Creates a relationship between Clothing and Size models.
 Clothing.hasMany(Size, {
   foreignKey: 'clothing_id',
-  onDelete: 'CASCADE'
+  onDelete: 'CASCADE',
 });
 
 Size.belongsTo(Clothing, {
-  foreignKey: 'clothing_id'
+  foreignKey: 'clothing_id',
 });
 
 module.exports = {

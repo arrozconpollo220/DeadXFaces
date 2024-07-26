@@ -6,10 +6,10 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
     try {
         const dbUserData = await User.create({
-          name: req.body.name,
-          email: req.body.email,
-          password: req.body.password,
-          adminStatus: false
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+            adminStatus: false
         });
 
 
@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
     try {
         const dbUserData = await User.findOne({
             where: {
-              email: req.body.email,
+                email: req.body.email,
             },
         });
 

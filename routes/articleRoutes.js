@@ -1,24 +1,33 @@
-const router = require('express').Router();
-const { Article } = require('../models');
+const Clothing = require('../models/Clothing');
+const Size = require('../models/Size');
 
-// Path to get an item by its ID
-router.get('/article/:id', async (req, res) => {
+async function getClothingDetails(req, res) {
     try {
-        const articleData = await Article.findByPk(req.params.id);
-        if (!articleData) {
-            res.status(404).json({ message: 'No article found with this id!' });
-            return;
+        const itemId = req.params.id;
+
+
+        const clothingItem = await Clothing.findByPk(itemId, {
+            include: [
+                {
+                    model: Size,
+                    as: 'size' 
+                }
+            ]
+        });
+
+        if (!clothingItem) {
+            return res.status(404).send('Item not found');
         }
 
-        const article = articleData.get({ plain: true });
-
+        
         res.render('onearticle', {
-            siteName: 'DEADXFACES',
-            article,
+            singleItem: clothingItem,
+            isAdmin: req.user && req.user.isAdmin 
         });
-    } catch (err) {
-        res.status(500).json(err);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
     }
-});
+}
 
-module.exports = router;
+module.exports = { getClothingDetails };

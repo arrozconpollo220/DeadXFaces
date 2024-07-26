@@ -16,17 +16,25 @@ CartItem.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    clothing_id: {
-      type: DataTypes.INTEGER,
+    design: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
     size: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    subtotal: {
+      type: DataTypes.DECIMAL,
+      allowNull: true,
     }
   },
   {
@@ -35,6 +43,14 @@ CartItem.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'cartItem',
+    hooks: {
+      beforeCreate: (cartItem) => {
+        cartItem.subtotal = cartItem.price * cartItem.quantity;
+      },
+      beforeUpdate: (cartItem) => {
+        cartItem.subtotal = cartItem.price * cartItem.quantity;
+      }
+    }
   }
 );
 

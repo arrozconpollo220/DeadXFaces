@@ -4,6 +4,9 @@ const { Clothing, Size } = require('../models');
 //GET all clothing items for homepage
 router.get('/', async (req, res) => {
   const clothingData = await Clothing.findAll({
+    attributes: {
+      exclude: ['cart_id']
+    },
     include: [
       {
         model: Size,
@@ -28,6 +31,9 @@ router.get('/', async (req, res) => {
 // Get selected clothing item
 router.get('/singleItem/:id', async (req, res) => {
   const singleItemData = await Clothing.findByPk(req.params.id, {
+    attributes: {
+      exclude: ['cart_id']
+    },
     include: [
       {
         model: Size,

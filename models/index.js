@@ -1,6 +1,7 @@
 const User = require('./User');
 const Clothing = require('./Clothing');
 const Size = require('./Size');
+const CartItem = require('./cartItem');
 
 // // Creates a relationship between Clothing and Size models.
 Clothing.hasMany(Size, {
@@ -12,8 +13,17 @@ Size.belongsTo(Clothing, {
   foreignKey: 'clothing_id',
 });
 
+CartItem.hasMany(Clothing, {
+  foreignKey: 'cart_id'
+});
+
+Clothing.belongsTo(CartItem, {
+  foreignKey: 'cart_id'
+});
+
 module.exports = {
   User,
   Clothing,
-  Size
+  Size,
+  CartItem
 };

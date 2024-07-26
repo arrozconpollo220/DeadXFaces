@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { Clothing, Size } = require('../models');
-// const withAuth = require('../utils/auth');
 
 //GET all clothing items for homepage
 router.get('/', async (req, res) => {
@@ -10,6 +9,9 @@ router.get('/', async (req, res) => {
         model: Size,
         attributes: ['size_name']
       },
+    ],
+    order: [
+      ['id', 'ASC']
     ]
   }).catch((err) => {
     res.json(err);

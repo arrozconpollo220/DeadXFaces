@@ -1,7 +1,8 @@
-{{!-- El contenido de esta vista será insertado en el lugar de {{{body}}} en el layout principal --}}
-<div class="container">
+
+{{!-- The content of this view will be inserted in place of {{{body}}} in the main layout --}}
+<div class="containerOneItem">
     <div>
-        <img src="{{singleItem.image_loc}}" style="height: 300px; width: 300px" />
+        <img src="{{singleItem.image_loc}}"  alt="Item Image" width="450" height="450"/>
     </div>
 
     <h2>{{singleItem.designName}}</h2>
@@ -9,11 +10,8 @@
     <h3>{{singleItem.color}}</h3>
     <h3>$ {{singleItem.price}}</h3>
 
-    <form>
-        <div>
-            <label for="qty-input">Quantity: </label>
-            <input type="text" id="qty-input">
-        </div>
+{{!-- select sizes talk with the team about the items with no sizes its not size for mustard OG DF women hoddie
+tie dye caras muertas womens hoodie, dead club$ puffer jacket  --}}
         <div>
             <label for="size-input">Size: </label>
             <select id="size-input">
@@ -23,9 +21,15 @@
                 {{/each}}
             </select>
         </div>
-    </form>
+    
 
-</div>
+{{!-- temporary form to add stuff to the cart --}}
+    <form action="/add-to-cart" method="post">
+        <input type="hidden" name="itemId" value="{{singleItem.id}}" />
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5" value="1" />
+        <button type="submit">Add to Cart</button>
+    </form>
 
 {{#if isAdmin}}
 <a href="/update/{{singleItem.id}}"><button>Update This Item</button></a>

@@ -74,7 +74,7 @@ app.post('/upload', async (req, res) => {
 
 const YOUR_DOMAIN = 'http://localhost:3001';
 // Stripe checkout
-app.get('/checkout', async (req, res) => {
+app.get('/checkout/:total', async (req, res) => {
   // const line_items = cart data base? or local storage?
   //Push
   const session = await stripe.checkout.sessions.create({
@@ -83,7 +83,7 @@ app.get('/checkout', async (req, res) => {
         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
         price_data: {
           currency: "USD",
-          unit_amount: 25.00*100,
+          unit_amount: req.params.total*100,
           product_data: {
             name: "test", 
             description: "test description",

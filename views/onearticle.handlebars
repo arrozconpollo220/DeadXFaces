@@ -2,6 +2,10 @@
 <div class="containerOneItem">
     {{#if loggedIn}}
     <h1>Cart total: ${{cartTotal}}</h1>
+    <form class="checkoutForm">
+        <input type="hidden" id="cartTotal" value="{{cartTotal}}" />
+        <button type="button"><a href="/checkout/{{cartTotal}}">Checkout</a></button>
+    </form>
     {{/if}}
 
     <div>

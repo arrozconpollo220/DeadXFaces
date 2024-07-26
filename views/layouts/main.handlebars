@@ -4,19 +4,27 @@
   <meta charset='UTF-8' />
   <title>DeadXFaces</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/ce7e1cc3b0.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-  <header class='display-flex justify-space-between align-center p-2'>
-    
-    <img src="/images/deadhead logo.jpg" />
-    <h1>DeadXFaces</h1>
-    <div>
-      <ul>
-        <li>
-          <a href="/">--Home--</a>
-        </li>
+
+
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <span class="icon-text">
+          <span class="icon">
+              <a href="/"Home <i class="fas fa-home"></a>
+        </span>
+
+
+
+
+
+
         {{#if isAdmin}}
         <li>
           <a href="/additem">--Add item--</a>
@@ -29,9 +37,15 @@
           <a href="../login">--Login--</a>
           {{/if}}
         </li>
-      </ul>
+        </ul>
+
+      </a>
     </div>
+  </nav>
+  <header class='display-flex justify-space-between align-center p-2'>
+    <img src="/images/Rebel.svg" alt="Dead Faces logo">
   </header>
+
 
   <div class='flex-column justify-space-around'>
     <main class='container container-fluid mt-5'>
@@ -40,6 +54,7 @@
   </div>
 
   <script src="/js/logout.js"></script>
+
 
 </body>
 

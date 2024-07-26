@@ -1,10 +1,7 @@
 {{!-- The content of this view will be inserted in place of {{{body}}} in the main layout --}}
 <div class="containerOneItem">
     <div>
-        <img src="{{singleItem.image_loc}}"  alt="Item Image" width="450" height="400"/>
-        {{#if isAdmin}}
-        <a><button>Update Image</button></a>
-        {{/if}}
+        <img src="{{singleItem.image_loc}}"  alt="Item Image" width="450" height="450"/>
     </div>
 
     <h2>{{singleItem.designName}}</h2>
@@ -14,23 +11,18 @@
 
 {{!-- select sizes talk with the team about the items with no sizes its not size for mustard OG DF women hoddie
 tie dye caras muertas womens hoodie, dead club$ puffer jacket  --}}
-<div>{{#if singleItem.sizes}}
-    <div class="size-selection">
-        <label for="size">Size:</label>
-        <select id="size" name="size">
-            {{#each singleItem.sizes}}
-            <option value="{{this.size}}">{{this.size}}</option>
-            {{/each}}
-        </select>
-    </div>
-    {{else}}
-    <p>No sizes available.</p>
-    {{/if}}
-    
-    </div>
+        <div>
+            <label for="size-input">Size: </label>
+            <select id="size-input">
+                <option value = -1>----------</option>
+                {{#each singleItem.sizes as |size|}}
+                <option value={{size.value}}>{{size.size_name}}</option>
+                {{/each}}
+            </select>
+        </div>
     
 
-{{!-- temporary form to add stuff to the car --}}
+{{!-- temporary form to add stuff to the cart --}}
     <form action="/add-to-cart" method="post">
         <input type="hidden" name="itemId" value="{{singleItem.id}}" />
         <label for="quantity">Quantity:</label>

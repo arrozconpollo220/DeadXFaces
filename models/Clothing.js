@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Create Clothing model and datatypes, including the user_id foreign key.
+// Create Clothing model and datatypes
 class Clothing extends Model {}
 
 Clothing.init(

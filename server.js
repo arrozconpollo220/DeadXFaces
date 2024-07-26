@@ -85,29 +85,20 @@ app.get('/checkout/:total', async (req, res) => {
           currency: "USD",
           unit_amount: req.params.total*100,
           product_data: {
-            name: "test", 
-            description: "test description",
+            name: "DeadXFaces Order", 
+            description: "Your order from DeadXFaces",
           }
         },
         quantity: 1,
       },
     ],
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}/checkout/success`,
-    cancel_url: `${YOUR_DOMAIN}/checkout/cancel`,
+    success_url: `${YOUR_DOMAIN}/success`,
+    cancel_url: `${YOUR_DOMAIN}`,
   });
 
  res.redirect(303, session.url)
 });
-
-app.get('/checkout/success', async (req,  res) => {
-  res.render('success')  //change to handlebars
-})
-
-app.get('/checkout/cancel', async (req,  res) => {
-  res.render('homepage')  //change to handlebars
-})
-
 
 app.get('/session-status', async (req, res) => {
   const session = await stripe.checkout.sessions.retrieve(req.query.session_id);

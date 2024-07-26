@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Clothing, Size } = require('../models');
+const { Clothing, Size, User } = require('../models');
 
 //GET all clothing items for homepage
 router.get('/', async (req, res) => {
@@ -98,6 +98,24 @@ router.get('/login', async (req, res) => {
 
 router.get('/signup', async (req, res) => {
   res.render('signup');
+});
+
+router.get('/success', async (req, res) => {
+  const userData = await User.findByPk(req.session.currentUserId, {
+  }).catch((err) => {
+    res.json(err);
+  });
+  const user = userData.get({ plain: true });
+  res.render('success', {
+    user,
+    loggedIn: req.session.loggedIn,
+    currUserId: req.session.currentUserId,
+    isAdmin: req.session.isAdmin
+  });
+  req.session.save(() => {
+    req.session.currentCartId = Math.floor(Math.random() * 999999999);
+    req.session.cartTotal = 0;
+  });
 });
 
 module.exports = router

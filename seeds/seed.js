@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Clothing, Size } = require('../models');
+const { User, Clothing, Size, CartItem } = require('../models');
 
 const userData = require('./userData.json');
 const clothingData = require('./clothingData.json');
@@ -24,6 +24,15 @@ const seedDatabase = async () => {
       clothing_id: clothing[Math.floor(Math.random() * clothing.length)].id,
     });
   }
+
+  const cartItemData = {
+    cartID: 101,
+    clothing_id: 1,
+    quantity: 2,
+    size: "small"
+  };
+
+  const cartItem = await CartItem.create(cartItemData);
 
   process.exit(0);
 };

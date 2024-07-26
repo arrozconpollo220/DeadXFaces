@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Create Clothing model and datatypes
-class Clothing extends Model {}
+class Clothing extends Model { }
 
 Clothing.init(
   {
@@ -34,19 +34,12 @@ Clothing.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    cart_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'cartItem',
-        key: 'cartID',
-      },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
   },
-},
   {
     sequelize,
     timestamps: false,

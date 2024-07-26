@@ -6,6 +6,7 @@ const fileUpload = require('express-fileupload');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const { Clothing } = require('./models');
 require('dotenv').config();
+const stripe = require('stripe')('sk_test_51Pe79KBKnwn5pg2W3bH8I3nx7GowQ0xQApvGKZofAgI9qLA8oM97biJQNiy0WwTnimb7We4md8TbRuU3Ps77MHzb004hJEx9Ik');
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
@@ -13,6 +14,7 @@ const helpers = require('./utils/helpers/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 
 const sess = {
   secret: process.env.SECRET,
@@ -67,6 +69,48 @@ app.post('/upload', async (req, res) => {
   } catch (err) {
     res.status(500).send(err);
   }
+});
+
+
+const YOUR_DOMAIN = 'http://localhost:3001';
+// Stripe checkout
+app.get('/checkout', async (req, res) => {
+  // const line_items = cart data base? or local storage?
+  //Push
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price_data: {
+          currency: "USD",
+          unit_amount: 25.00*100,
+          product_data: {
+            name: "test", 
+            description: "test description",
+          }
+        },
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}/checkout/success`,
+    cancel_url: `${YOUR_DOMAIN}/checkout/cancel`,
+  });
+
+ res.redirect(303, session.url)
+});
+
+app.get('/checkout/success', async (req,  res) => {
+  res.render('success')  //change to handlebars
+})
+
+app.get('/session-status', async (req, res) => {
+  const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+
+  res.send({
+    status: session.status,
+    customer_email: session.customer_details.email
+  });
 });
 
 app.use(routes);

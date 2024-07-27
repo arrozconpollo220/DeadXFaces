@@ -4,48 +4,85 @@
   <meta charset='UTF-8' />
   <title>DeadXFaces</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/ce7e1cc3b0.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-  <header class='display-flex justify-space-between align-center p-2'>
-    
-    <img src="/images/deadhead logo.jpg" />
-    <h1>DeadXFaces</h1>
-    <div>
-      <ul>
-        <li>
-          <a href="/">--Home--</a>
-        </li>
+  <header class="header">
+    <img src="images/Rebel-cropped.svg" alt="site logo" style="max-height: 236px">
 
-        <li>
-          <a href="/cart">--Shopping Cart--</a>
-        </li>
-
-        {{#if isAdmin}}
-        <li>
-          <a href="/additem">--Add item--</a>
-        </li>
-        {{/if}}
-        <li>
-          {{#if loggedIn}}
-          <a href="/" id="logout">--Logout--</a>
-          {{else}}
-          <a href="../login">--Login--</a>
-          {{/if}}
-        </li>
-      </ul>
-    </div>
   </header>
 
-  <div class='flex-column justify-space-around'>
+  <nav class="navbar has-shadow has-background-primary-00">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+
+      </a>
+    </div>
+
+
+    <div class="navbar-menu" id="nav-links">
+      <div class="navbar-start is-flex-direction-column">
+        <a href="/">
+          <i class="fas fa-home fa-sm" style="color: #FAFAFA;"></i>
+        <span>Home</span>
+        </a>
+        
+        <a href="../login">
+        <i class="fa-regular fa-user fa-sm"style="color: #FAFAFA;"></i>
+        <span>Login</span>
+        </a>
+
+
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <a href="/cart">
+          <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-lg" style=" color: #FAFAFA;"></i>
+          <span>Cart</span>
+        </a>
+        <a class="Login"></a>
+        <span class="icon-text">
+
+
+
+
+         
+      </div>
+    </div>
+  </nav>
+
+{{!-- I think this goes somewhere else, check with Jason --}}
+  {{!-- {{#if isAdmin}}
+  <li>
+    <a href="/additem">--Add item--</a>
+  </li>
+  {{/if}}
+  <li>
+    {{#if loggedIn}}
+    <a href="/" id="logout">--Logout--</a>
+    {{else}}
+    <a href="../login">--Login--</a>
+    {{/if}}
+  </li>
+  </ul>
+
+  </a>
+  </div> --}}
+
+
+
+
+  <div class='flex-column'>
     <main class='container container-fluid mt-5'>
       {{{body}}}
     </main>
   </div>
 
   <script src="/js/logout.js"></script>
-
 </body>
 
 </html>

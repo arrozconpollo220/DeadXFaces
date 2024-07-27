@@ -75,7 +75,7 @@ router.delete('/delete', async (req, res) => {
         }
         );
 
-        if (dbDeleteItemData[0] === 0) { // Check if any rows were updated
+        if (dbDeleteCartData[0] === 0) { // Check if any rows were updated
             res.status(404).json({ message: 'No item found in the cart with this id!' });
         } else {
             res.status(200).json(dbDeleteCartData);
@@ -86,5 +86,6 @@ router.delete('/delete', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 module.exports = router;

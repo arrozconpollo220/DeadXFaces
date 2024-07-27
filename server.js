@@ -15,6 +15,7 @@ const helpers = require('./utils/helpers/helpers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const { CartItem } = require('./models');
 
 const sess = {
   secret: process.env.SECRET,
@@ -111,6 +112,28 @@ app.get('/session-status', async (req, res) => {
 
 app.use(routes);
 
+// Agrega la ruta para renderizar la página del carrito
+app.get('/cart', async (req, res) => {
+  try {
+    const cartItems = await CartItem.findAll({
+      where: {
+        cart_id: req.session.currentCartId,
+      }
+    });
+
+    const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    const total = subtotal; // Aquí puedes incluir lógica adicional para impuestos/gastos si es necesario
+
+    res.render('cart', {
+      cartItems: cartItems.map(item => item.get({ plain: true })),
+      subtotal,
+      total
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

@@ -1,0 +1,32 @@
+<div class="cart">
+    <h1>Your Shopping Cart</h1>
+
+    {{#if cartItems.length}}
+      <div class="cart-items">
+        {{#each cartItems}}
+          <div class="cart-item">
+            <div class="item-details">
+              <h2>{{this.design}}</h2>
+              <p>Size: {{this.size}}</p>
+              <p>Price: ${{this.price}}</p>
+              <p>Quantity: {{this.quantity}}</p>
+              <button class="remove-btn" data-id="{{this.id}}">Delete</button>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="cart-summary">
+        <p>Subtotal: ${{subtotal}}</p>
+        <p>Total: ${{total}}</p>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    {{else}}
+      <div class="empty-cart">
+        <p>Your cart is empty<a href="/">Continue Shopping</a></p>
+      </div>
+    {{/if}}
+</div>
+
+  <script src="/js/cart.js"></script>
+

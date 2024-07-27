@@ -1,12 +1,5 @@
 {{!-- The content of this view will be inserted in place of {{{body}}} in the main layout --}}
 <div class="containerOneItem">
-    {{#if loggedIn}}
-    <h1>Cart total: ${{cartTotal}}</h1>
-    <form class="checkoutForm">
-        <input type="hidden" id="cartTotal" value="{{cartTotal}}" />
-        <button  class="button is-light" type="button"><a href="/checkout/{{cartTotal}}">Checkout</a></button>
-    </form>
-    {{/if}}
 
     <div>
         <img src="{{singleItem.image_loc}}" alt="Item Image" width="450" height="450" />

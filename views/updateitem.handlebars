@@ -1,9 +1,9 @@
 <h2 class="title is-2">Update item</h2>
 {{#if isAdmin}}
-<div class="grid">
-    <div class="cell m-5 ">
+<div class="columns is-desktop">
+    <div class="column m-5 ">
         <h3 class="title is-4">Update image: </h3>
-        <img src={{singleItem.image_loc}} style="height: 50%;" class="m-2"/>
+        <img src={{singleItem.image_loc}} style="height: 45%;" class="m-2"/>
         <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
             <input type="hidden" name="itemId" value={{singleItem.id}} />
             <input type="file" name="imgFile"/>
@@ -12,7 +12,7 @@
         </form>
     </div>
 
-    <div class="cell m-5">
+    <div class="column m-5">
         <h3 class="title is-4">Update item information: </h3>
         <form class="updateItemForm">
             <input type="hidden" id="item-id" value={{singleItem.id}}>
@@ -42,7 +42,7 @@
         </form>
     </div>
 
-    <div class="cell m-5">
+    <div class="column m-5">
         <h3 class="title is-4">Update sizes: </h3>
         <div>
             {{> availsizes}}

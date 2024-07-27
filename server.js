@@ -118,7 +118,7 @@ app.get('/cart', async (req, res) => {
     const cartItems = await CartItem.findAll({
       where: {
         cart_id: req.session.currentCartId,
-      }
+      },
     });
 
     const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
@@ -127,7 +127,10 @@ app.get('/cart', async (req, res) => {
     res.render('cart', {
       cartItems: cartItems.map(item => item.get({ plain: true })),
       subtotal,
-      total
+      total,
+      loggedIn: req.session.loggedIn,
+      currUserId: req.session.currentUserId,
+      isAdmin: req.session.isAdmin
     });
   } catch (err) {
     console.log(err);

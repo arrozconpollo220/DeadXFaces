@@ -1,5 +1,5 @@
 <div class="cart">
-    <h1>Your Shopping Cart</h1>
+    <h1 class="title is-2">Your Shopping Cart</h1>
 
     {{#if cartItems.length}}
       <div class="cart-items">
@@ -10,8 +10,10 @@
               <p>Size: {{this.size}}</p>
               <p>Price: ${{this.price}}</p>
               <p>Quantity: {{this.quantity}}</p>
-              <input type="hidden" id="cartitem_id" value={{this.id}} />
-              <button class="button is-danger is-dark type="button" class="remove-btn" data-id="{{this.id}}">Delete</button>
+              <form>
+              <input type="hidden" id="cartitem_id{{this.id}}" value={{this.id}} />
+              <button class="remove-btn button is-danger is-dark" type="button" data-id="{{this.id}}">Delete</button>
+              </form>
             </div>
           </div>
         {{/each}}
@@ -27,9 +29,10 @@
       </div>
     {{else}}
       <div class="empty-cart">
-        <p>Your cart is empty<a href="/">Continue Shopping</a></p>
+        <p>Your cart is empty!</p>
       </div>
     {{/if}}
+    <a href="/">Continue shopping...</a>
 </div>
 
   <script src="/js/delFromCart.js"></script>

@@ -1,31 +1,36 @@
-<h1>Add item:</h1>
+<h1 class="title is-2">Add item:</h1>
 
 {{#if isAdmin}}
-<div>
-    <form class="newItemForm">
-        <label for="type-input">Type of item: </label>
-        <div>
-            <input type="text" id="type-input">
-        </div>
+<div class="columns mt-6">
+    <div class="column is-one-quarter">
+        <img src="/images/Untitled_Artwork.PNG" alt="dxf dollar sign logo" style="width: 100%;">
+    </div>
+    <div>
+        <form class="newItemForm" style="width: 36rem;">
+            <label for="type-input">Type of item: </label>
+            <div>
+                <input type="text" id="type-input" class="input mb-2">
+            </div>
 
-        <label for="design-input">Design Title: </label>
-        <div>
-            <input type="text" id="design-input">
-        </div>
+            <label for="design-input">Design Title: </label>
+            <div>
+                <input type="text" id="design-input" class="input mb-2">
+            </div>
 
-        <label for="color-input">Color: </label>
-        <div>
-            <input type="text" id="color-input">
-        </div>
+            <label for="color-input">Color: </label>
+            <div>
+                <input type="text" id="color-input" class="input mb-2">
+            </div>
 
-        <label for="price-input">Price: </label>
-        <div>
-            <input type="text" id="price-input">
-        </div>
+            <label for="price-input">Price: </label>
+            <div>
+                <input type="text" id="price-input" class="input mb-2">
+            </div>
 
-        <button type="submit">Add Clothing Item</button>
+            <button type="submit" class="button mt-5">Add Clothing Item</button>
 
-    </form>
+        </form>
+    </div>
 </div>
 {{else}}
 <p>This page can only be accessed by an Administrator.</p>

@@ -45,7 +45,14 @@
     "type": "Accessory",
     "price": 27.00,
     "designName": "6 pack Hat Case",
-    "color": "black",
+    "color": "Black",
     "image_loc": "/images/06hatbox.png"
+  },
+  {
+    "type": "Suit",
+    "price": 90.00,
+    "designName": "Shirt/Short Suit",
+    "color": "Green",
+    "image_loc": "/images/07shirtshortsuit.png"
   }
 ]

@@ -95,7 +95,7 @@ app.get('/checkout/:total', async (req, res) => {
     ],
     mode: 'payment',
     success_url: `${YOUR_DOMAIN}/success`,
-    cancel_url: `${YOUR_DOMAIN}`,
+    cancel_url: `${YOUR_DOMAIN}/cart`,
   });
 
  res.redirect(303, session.url)

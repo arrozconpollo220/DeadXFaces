@@ -65,12 +65,11 @@ router.put('/update', async (req, res) => {
 });
 
 // Delete existing cart item
-router.delete('/delete', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try {
         const dbDeleteCartData = await CartItem.destroy({
             where: {
-                cart_id: req.session.currentCartId,
-                design: req.body.design,
+                id: req.params.id
             }
         }
         );

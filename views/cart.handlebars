@@ -11,7 +11,7 @@
               <p>Price: ${{this.price}}</p>
               <p>Quantity: {{this.quantity}}</p>
               <input type="hidden" id="cartitem_id" value={{this.id}} />
-              <button type="button" class="remove-btn" data-id="{{this.id}}">Delete</button>
+              <button class="button is-danger is-dark type="button" class="remove-btn" data-id="{{this.id}}">Delete</button>
             </div>
           </div>
         {{/each}}
@@ -21,7 +21,8 @@
         <p>Subtotal: ${{subtotal}}</p>
         <h3>Total: ${{total}}</h3>
         <form class="checkoutForm">
-        <button type="button"><a href="/checkout/{{total}}">Checkout</a></button>
+        <button  class="button is-info is-light" type="button"><a href="/checkout/{{total}}">Checkout</a></button>
+        
     </form>
       </div>
     {{else}}

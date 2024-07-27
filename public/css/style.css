@@ -4,26 +4,43 @@ header img {
   flex-wrap: wrap;
   align-content: space-around;
   width: 100vw;
-  height: 100%;
-  margin: -75px -100 -100px 0;
+  padding-bottom: 5px;
+  margin: -2px -20 -10px 0px;
+  background-image: linear-gradient(#343434,#808080,#C0C0C0,#808080,#343434);
   }
 
 body {
+    flex-wrap: wrap;
+    align-content: center;
     position: relative;
-    height: 50%;
-    background-image: radial-gradient(circle, #343434,#808080,#C0C0C0,#808080,#343434);
+    height: 100%;
+    /* background-image: radial-gradient(circle, #343434,#808080,#C0C0C0,#808080,#343434);
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: black;
     margin: 0;
     padding: 0;
+    z-index: -2; */
+  }
+
+  main {
+    flex-wrap: wrap;
+    align-content: center;
+    position: relative;
+    height: 100%;
+    background-image: radial-gradient(circle, #343434,#808080,#C0C0C0,#808080,#343434);
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+
     z-index: -2;
   }
   
-  swiper-container {
+  swiper-container{
+    justify-content: center;
     width: 100vw;
-    max-height: 100%;
-    padding-top: 20px;
+    max-height: 40%;
+    padding-top: 0px;
     color: #eee;
     padding-bottom: 20px;
     background-image: linear-gradient(#343434,#808080,#C0C0C0,#808080,#343434);
@@ -35,7 +52,7 @@ body {
   swiper-slide {
     background-position: center;
     background-size: cover;
-    margin-top: 10px;
+    margin: 30 10 10 10;
     z-index: -1;
     width: 350px;
     height: 350px;
@@ -43,7 +60,8 @@ body {
   
   swiper-slide img {
     display: block;
-    width: 100%;
+    width: 100vh;
     z-index: 10;
     border: #4E915D 3px solid;
+    border-radius: 3%;
   }

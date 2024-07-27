@@ -10,51 +10,79 @@
 </head>
 
 <body>
-  <header class='display-flex justify-space-between align-center p-2'>
-    
-    <img src="/images/deadhead logo.jpg" />
-    <h1>DeadXFaces</h1>
-    <div>
-      <ul>
-        <li>
-          <a href="/">--Home--</a>
-        </li>
+  <header class="header">
+    <img src="images/Rebel-cropped.svg" alt="site logo" style="max-height: 120px">
 
-        <li>
-          <a href="/cart">--Shopping Cart--</a>
-        </li>
+  </header>
 
-        {{#if isAdmin}}
-        <li>
-          <a href="/additem">--Add item--</a>
-        </li>
-        {{/if}}
-        <li>
-          {{#if loggedIn}}
-          <a href="/" id="logout">--Logout--</a>
-          {{else}}
-          <a href="../login">--Login--</a>
-          {{/if}}
-        </li>
-        </ul>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item">
 
       </a>
     </div>
+
+
+    <div class="navbar-menu" id="nav-links">
+      <div class="navbar-end">
+        <a href="/cart">
+          <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-lg" style=" color: #4E915D;"></i>
+          <span>cart</span>
+        </a>
+        <a class="Login"></a>
+        <span class="icon-text">
+
+
+
+
+          <a class="/">Home</a>
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+          <span>Home</span>
+        </span>
+      </div>
+    </div>
   </nav>
-  <header class='display-flex justify-space-between align-center p-2'>
-    <img src="/images/Rebel.svg" alt="Dead Faces logo">
+  <a href="/cart">
+    <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-2xl" style=" color: #4E915D;"></i>
+    <span>cart</span>
+  </a>
+
+  {{#if isAdmin}}
+  <li>
+    <a href="/additem">--Add item--</a>
+  </li>
+  {{/if}}
+  <li>
+    {{#if loggedIn}}
+    <a href="/" id="logout">--Logout--</a>
+    {{else}}
+    <a href="../login">--Login--</a>
+    {{/if}}
+  </li>
+  </ul>
+
+  </a>
+  </div>
   </header>
 
-
-  <div class='flex-column justify-space-around'>
+  <div class='flex-column'>
     <main class='container container-fluid mt-5'>
       {{{body}}}
     </main>
   </div>
-
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Website created by <strong>MMDR</strong>. The source code is licensed
+        <a href="https://opensource.org/license/mit">MIT</a>. The
+        website content is licensed
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
   <script src="/js/logout.js"></script>
-
-
 </body>
 
 </html>

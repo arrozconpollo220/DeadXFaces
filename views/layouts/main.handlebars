@@ -11,11 +11,11 @@
 
 <body>
   <header class="header">
-    <img src="images/Rebel-cropped.svg" alt="site logo" style="max-height: 120px">
+    <img src="images/Rebel-cropped.svg" alt="site logo" style="max-height: 236px">
 
   </header>
 
-  <nav class="navbar">
+  <nav class="navbar has-shadow has-background-primary-00">
     <div class="navbar-brand">
       <a class="navbar-item">
 
@@ -24,10 +24,25 @@
 
 
     <div class="navbar-menu" id="nav-links">
+      <div class="navbar-start is-flex-direction-column">
+        <a href="/">
+          <i class="fas fa-home fa-sm" style="color: #FAFAFA;"></i>
+        <span>Home</span>
+        </a>
+        
+        <a href="../login">
+        <i class="fa-regular fa-user fa-sm"style="color: #FAFAFA;"></i>
+        <span>Login</span>
+        </a>
+
+
+        </a>
+      </div>
+
       <div class="navbar-end">
         <a href="/cart">
-          <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-lg" style=" color: #4E915D;"></i>
-          <span>cart</span>
+          <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-lg" style=" color: #FAFAFA;"></i>
+          <span>Cart</span>
         </a>
         <a class="Login"></a>
         <span class="icon-text">
@@ -35,21 +50,13 @@
 
 
 
-          <a class="/">Home</a>
-          <span class="icon">
-            <i class="fas fa-home"></i>
-          </span>
-          <span>Home</span>
-        </span>
+         
       </div>
     </div>
   </nav>
-  <a href="/cart">
-    <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-2xl" style=" color: #4E915D;"></i>
-    <span>cart</span>
-  </a>
 
-  {{#if isAdmin}}
+{{!-- I think this goes somewhere else, check with Jason --}}
+  {{!-- {{#if isAdmin}}
   <li>
     <a href="/additem">--Add item--</a>
   </li>
@@ -64,24 +71,17 @@
   </ul>
 
   </a>
-  </div>
-  </header>
+  </div> --}}
+
+
+
 
   <div class='flex-column'>
     <main class='container container-fluid mt-5'>
       {{{body}}}
     </main>
   </div>
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        Website created by <strong>MMDR</strong>. The source code is licensed
-        <a href="https://opensource.org/license/mit">MIT</a>. The
-        website content is licensed
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
-      </p>
-    </div>
-  </footer>
+
   <script src="/js/logout.js"></script>
 </body>
 

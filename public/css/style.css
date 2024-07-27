@@ -1,11 +1,15 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css";
 
+header {
+
+}
+
 header img {
   flex-wrap: wrap;
   align-content: space-around;
   width: 100vw;
-  padding-bottom: 5px;
-  margin: -2px -20 -10px 0px;
+  padding-bottom: 21px;
+  margin: 0px 0px -10px 0px;
   background-image: linear-gradient(#343434,#808080,#C0C0C0,#808080,#343434);
   }
 
@@ -14,33 +18,36 @@ body {
     align-content: center;
     position: relative;
     height: 100%;
-    /* background-image: radial-gradient(circle, #343434,#808080,#C0C0C0,#808080,#343434);
+    width: 100vw;
+    background-image: radial-gradient(circle, #343434,#808080,#C0C0C0,#808080,#343434);
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: black;
     margin: 0;
     padding: 0;
-    z-index: -2; */
+    z-index: -2;
   }
 
-  main {
+  /* main {
     flex-wrap: wrap;
     align-content: center;
     position: relative;
     height: 100%;
-    background-image: radial-gradient(circle, #343434,#808080,#C0C0C0,#808080,#343434);
+    width: 100vw;
+    width: ;
+
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: black;
 
     z-index: -2;
-  }
+  } */
   
   swiper-container{
-    justify-content: center;
     width: 100vw;
-    max-height: 40%;
+    max-height: 50%;
     padding-top: 0px;
+    margin-left: 0px;
     color: #eee;
     padding-bottom: 20px;
     background-image: linear-gradient(#343434,#808080,#C0C0C0,#808080,#343434);
@@ -64,4 +71,18 @@ body {
     z-index: 10;
     border: #4E915D 3px solid;
     border-radius: 3%;
+  }
+
+  .navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    height:auto;
+
+  }
+
+
+
+  span {
+    color:#4E915D
   }

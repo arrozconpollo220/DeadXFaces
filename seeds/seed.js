@@ -26,10 +26,11 @@ const seedDatabase = async () => {
   }
 
   const cartItemData = {
-    cartID: 101,
-    clothing_id: 1,
+    cart_id: 101,
+    design: "dirty socks",
+    price: 45.00,
     quantity: 2,
-    size: "small"
+    size: "small",
   };
 
   const cartItem = await CartItem.create(cartItemData);

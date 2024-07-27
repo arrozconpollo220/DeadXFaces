@@ -30,22 +30,36 @@
         <span>Home</span>
         </a>
         
+        {{#if isAdmin}}
+        <a href="../additem">
+        <i class="fa-regular fa-user fa-sm"style="color: #FAFAFA;"></i>
+        <span>Add Item</span>
+        </a>
+        {{/if}}
+
+        {{#if loggedIn}}
+        <a href="/" id="logout">
+        <i class="fa-regular fa-user fa-sm"style="color: #FAFAFA;"></i>
+        <span>Logout</span>
+        </a>
+        {{else}}
         <a href="../login">
         <i class="fa-regular fa-user fa-sm"style="color: #FAFAFA;"></i>
         <span>Login</span>
         </a>
+        {{/if}}
 
 
         </a>
       </div>
 
+      {{#if loggedIn}}
       <div class="navbar-end">
         <a href="/cart">
           <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-lg" style=" color: #FAFAFA;"></i>
           <span>Cart</span>
         </a>
-        <a class="Login"></a>
-        <span class="icon-text">
+      {{/if}}
 
 
 
@@ -54,27 +68,6 @@
       </div>
     </div>
   </nav>
-
-{{!-- I think this goes somewhere else, check with Jason --}}
-  {{!-- {{#if isAdmin}}
-  <li>
-    <a href="/additem">--Add item--</a>
-  </li>
-  {{/if}}
-  <li>
-    {{#if loggedIn}}
-    <a href="/" id="logout">--Logout--</a>
-    {{else}}
-    <a href="../login">--Login--</a>
-    {{/if}}
-  </li>
-  </ul>
-
-  </a>
-  </div> --}}
-
-
-
 
   <div class='flex-column'>
     <main class='container container-fluid mt-5'>

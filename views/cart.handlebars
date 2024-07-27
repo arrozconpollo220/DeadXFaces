@@ -10,7 +10,8 @@
               <p>Size: {{this.size}}</p>
               <p>Price: ${{this.price}}</p>
               <p>Quantity: {{this.quantity}}</p>
-              <button class="remove-btn" data-id="{{this.id}}">Delete</button>
+              <input type="hidden" id="cartitem_id" value={{this.id}} />
+              <button type="button" class="remove-btn" data-id="{{this.id}}">Delete</button>
             </div>
           </div>
         {{/each}}
@@ -18,8 +19,10 @@
 
       <div class="cart-summary">
         <p>Subtotal: ${{subtotal}}</p>
-        <p>Total: ${{total}}</p>
-        <button class="checkout-btn">Checkout</button>
+        <h3>Total: ${{total}}</h3>
+        <form class="checkoutForm">
+        <button type="button"><a href="/checkout/{{total}}">Checkout</a></button>
+    </form>
       </div>
     {{else}}
       <div class="empty-cart">
@@ -28,5 +31,5 @@
     {{/if}}
 </div>
 
-  <script src="/js/cart.js"></script>
+  <script src="/js/delFromCart.js"></script>
 

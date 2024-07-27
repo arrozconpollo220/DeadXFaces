@@ -1,55 +1,56 @@
-<h2>Update item:</h2>
+<h2 class="title is-2">Update item</h2>
 {{#if isAdmin}}
-<div>
-    <div>
-        <h3>Update image: </h3>
-        <img src={{singleItem.image_loc}} style="height: 300px; width: 300px" />
+<div class="grid">
+    <div class="cell m-5 ">
+        <h3 class="title is-4">Update image: </h3>
+        <img src={{singleItem.image_loc}} style="height: 50%;" class="m-2"/>
         <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
             <input type="hidden" name="itemId" value={{singleItem.id}} />
-            <input type="file" name="imgFile" />
-            <input type='submit' value='Upload!' />
+            <input type="file" name="imgFile"/>
+            <br><br>
+            <input type='submit' value='Upload!' class="button is-success"/>
         </form>
     </div>
 
-    <div>
-        <h3>Update item information: </h3>
+    <div class="cell m-5">
+        <h3 class="title is-4">Update item information: </h3>
         <form class="updateItemForm">
             <input type="hidden" id="item-id" value={{singleItem.id}}>
             <label for="type-input">Type of item: </label>
             <div>
-                <input type="text" id="type-input" value="{{singleItem.type}}">
+                <input type="text" id="type-input" class="input mb-2" value="{{singleItem.type}}">
             </div>
 
             <label for="design-input">Design Title: </label>
             <div>
-                <input type="text" id="design-input" value="{{singleItem.designName}}">
+                <input type="text" id="design-input" class="input mb-2" value="{{singleItem.designName}}">
             </div>
 
             <label for="color-input">Color: </label>
             <div>
-                <input type="text" id="color-input" value="{{singleItem.color}}">
+                <input type="text" id="color-input" class="input mb-2" value="{{singleItem.color}}">
             </div>
 
             <label for="price-input">Price: </label>
             <div>
-                <input type="text" id="price-input" value={{singleItem.price}}>
+                <input type="text" id="price-input" class="input mb-2" value={{singleItem.price}}>
             </div>
-
-            <button type="submit">Update Item</button>
-            <button type="button" class="delete-item">Delete Item</button>
+            <br>
+            <button type="submit" class="button is-success">Update Item</button>
+            <button type="button" class="delete-item button is-danger">Delete Item</button>
 
         </form>
     </div>
 
-    <div>
-        <h3>Update sizes: </h3>
+    <div class="cell m-5">
+        <h3 class="title is-4">Update sizes: </h3>
         <div>
             {{> availsizes}}
         </div>
         <div>
-            <form class="sizeOptionsForm">
+            <form class="sizeOptionsForm mt-6">
                 <label for="sizeOptions">Choose a size:</label>
-                <select id="sizeOptions" name="sizeOptions">
+                <select id="sizeOptions" name="sizeOptions" class="select">
                     <option value=-1>----------</option>
                     <option value=0>Fits All</option>
                     <option value=1>Small</option>
@@ -59,9 +60,9 @@
                     <option value=5>XX-Large</option>
                     <option value=6>XXX-Large</option>
                 </select>
-                <br>
-                <button type="submit">Add Size</button>
-                <button type="button" class="delete-size">Delete Size</button>
+                <br><br>
+                <button type="submit" class="button is-success">Add Size</button>
+                <button type="button" class="delete-size button is-danger">Delete Size</button>
             </form>
         </div>
     </div>

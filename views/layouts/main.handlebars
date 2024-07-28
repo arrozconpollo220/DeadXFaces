@@ -52,7 +52,7 @@
         </a>
       </div>
 
-      {{#if loggedIn}}
+
       <div class="navbar-end is-flex-direction-column">
 
         <a href="https://www.tiktok.com/@deadfacesdollasigns">
@@ -64,7 +64,7 @@
           <i class="fa-brands fa-instagram" style="color: #FAFAFA;"></i>
           <span>Instagram</span>
         </a>
-
+        {{#if loggedIn}}
         <a href="/cart">
           <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-lg" style=" color: #FAFAFA;"></i>
           <span>Cart</span>
@@ -76,7 +76,8 @@
   </nav>
 
   <div class='flex-column'>
-    <main class='container container-fluid mt-5' style="height: 55%; max-height: 55%; overflow-y: auto; overflow-x: hidden;">
+    <main class='container container-fluid mt-5'
+      style="height: 55%; max-height: 55%; overflow-y: auto; overflow-x: hidden;">
       {{{body}}}
     </main>
   </div>

@@ -5,11 +5,12 @@
       <div class="cart-items">
         {{#each cartItems}}
           <div class="cart-item">
-            <div class="item-details">
-              <h2>{{this.design}}</h2>
-              <p>Size: {{this.size}}</p>
-              <p>Price: ${{this.price}}</p>
-              <p>Quantity: {{this.quantity}}</p>
+            <div class="item-details grid has-text-white text" style="text-shadow: 1px 1px black">
+              <p class="cell">{{this.design}}</p>
+              <p class="cell">Size: {{this.size}}</p>
+              <p class="cell">Price: ${{this.price}}</p>
+              <p class="cell">Quantity: {{this.quantity}}</p>
+              <p class="cell">Subtotal: ${{subtotal}}</p>
               <form>
               <input type="hidden" id="cartitem_id{{this.id}}" value={{this.id}} />
               <button class="remove-btn button is-danger is-dark" type="button" data-id="{{this.id}}">Delete</button>
@@ -20,19 +21,19 @@
       </div>
 
       <div class="cart-summary">
-        <p>Subtotal: ${{subtotal}}</p>
-        <h3>Total: ${{total}}</h3>
+        
+        <h3 class="title is-4">Total: ${{total}}</h3>
         <form class="checkoutForm">
         <button  class="button is-info is-light" type="button"><a href="/checkout/{{total}}">Checkout</a></button>
         
     </form>
       </div>
     {{else}}
-      <div class="empty-cart">
+      <div class="empty-cart title is-4">
         <p>Your cart is empty!</p>
       </div>
     {{/if}}
-    <a href="/">Continue shopping...</a>
+    <a href="/"><button class="button">Continue shopping</button></a>
 </div>
 
   <script src="/js/delFromCart.js"></script>

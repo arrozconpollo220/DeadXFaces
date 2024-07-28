@@ -1,44 +1,55 @@
 {{!-- The content of this view will be inserted in place of {{{body}}} in the main layout --}}
-<div class="containerOneItem">
+<div class="container">
+    <div class="columns mt-6">
+        <div class="column">
+            <h2 class="title is-2 mb-4">{{singleItem.designName}}</h2>
+            <img src="{{singleItem.image_loc}}" alt="Item Image" style="width: 75%; border: #4E915D 3px solid; border-radius: 10%;" />
+        </div>
 
-    <div>
-        <img src="{{singleItem.image_loc}}" alt="Item Image" width="450" height="450" />
-    </div>
-
-    <h2>{{singleItem.designName}}</h2>
-    <h4>Clothing Type: {{singleItem.type}}</h4>
-    <h4>Color: {{singleItem.color}}</h4>
-    <h4>Price: ${{singleItem.price}}</h4>
-    <div>
-        {{> availsizes}}
-    </div>
-
-    {{!-- Form to add stuff to the cart --}}
-    <div>
-        {{#if loggedIn}}
-        <h3>Purchase this item!</h3>
-        <form class="addToCartForm">
-            <input type="hidden" id="itemId" value="{{singleItem.id}}" />
-            <input type="hidden" id="clothingDesign" value="{{singleItem.designName}}" />
-            <input type="hidden" id="clothingPrice" value={{singleItem.price}} />
-            <label>Size: </label>
-            <select>
-                <option value=-1>----------</option>
-                {{#each singleItem.sizes as |size|}}
-                <option id="size-input" value="{{size.size_name}}">{{size.size_name}}</option>
-                {{/each}}
-            </select>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity-input" name="quantity" min="1" max="5" value="1" />
-            <button  class="button is-small is-info is-light" type="submit">Add to Cart</button>
+        <div class="column pl-6 has-text-success mt-6" style="width: 36rem; ">
+            <h4>Clothing Type: {{singleItem.type}}</h4>
+            <h4>Color: {{singleItem.color}}</h4>
+            <h4>Price: ${{singleItem.price}}</h4>
+            <div class="mt-4">
+                {{> availsizes}}
+            </div>
+        </div>
+        <div class="column pl-6 has-text-success" style="width: 36rem; ">
+            {{!-- Form to add stuff to the cart --}}
+            <div>
+                {{#if loggedIn}}
+                <h3 class="title is-4 mt-4">Purchase this item!</h3>
+                <form class="addToCartForm">
+                    <input type="hidden" id="itemId" value="{{singleItem.id}}" />
+                    <input type="hidden" id="clothingDesign" value="{{singleItem.designName}}" />
+                    <input type="hidden" id="clothingPrice" value={{singleItem.price}} />
+                    <label>Size: </label>
+                    <div>
+                    <select class="input" style="width: 12em;">
+                        <option value=-1>----------</option>
+                        {{#each singleItem.sizes as |size|}}
+                        <option id="size-input" value="{{size.size_name}}">{{size.size_name}}</option>
+                        {{/each}}
+                    </select>
+            </div>
+            <div class="mt-4" style="width: 12em;">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity-input" name="quantity" min="1" max="5" value="1" class="input" />
+            </div>
+            <button class="button is-info is-light mt-5" type="submit">Add to Cart</button>
             {{else}}
-            <h4><a href="/login">Log in to purchase this item!</a></h4>
+            <h4 class="title is-4 mt-6"><a href="/login" style="color: red; text-decoration: none; text-shadow: 1px 1px white">Log in to purchase this item!</a></h4>
             {{/if}}
-        </form>
+            </form>
+
+            {{#if isAdmin}}
+            <a href="/update/{{singleItem.id}}"><button type="button" class="button is-warning mt-5">Update This
+                    Item</button></a>
+            {{/if}}
+        </div>
+
+
     </div>
+</div>
 
-    {{#if isAdmin}}
-    <a href="/update/{{singleItem.id}}"><button>Update This Item</button></a>
-    {{/if}}
-
-    <script src="/js/addToCart.js"></script>
+<script src="/js/addToCart.js"></script>

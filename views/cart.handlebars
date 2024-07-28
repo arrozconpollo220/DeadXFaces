@@ -1,40 +1,39 @@
-<div class="cart">
+<div class="cart columns">
+  <div class="cart-items column is-three-quarters">
     <h1 class="title is-2">Your Shopping Cart</h1>
 
     {{#if cartItems.length}}
-      <div class="cart-items">
-        {{#each cartItems}}
-          <div class="cart-item">
-            <div class="item-details grid has-text-white text" style="text-shadow: 1px 1px black">
-              <p class="cell">{{this.design}}</p>
-              <p class="cell">Size: {{this.size}}</p>
-              <p class="cell">Price: ${{this.price}}</p>
-              <p class="cell">Quantity: {{this.quantity}}</p>
-              <p class="cell">Subtotal: ${{subtotal}}</p>
-              <form>
-              <input type="hidden" id="cartitem_id{{this.id}}" value={{this.id}} />
-              <button class="remove-btn button is-danger is-dark" type="button" data-id="{{this.id}}">Delete</button>
-              </form>
-            </div>
-          </div>
-        {{/each}}
+    {{#each cartItems}}
+    <div class="cart-item mt-4" style="border-bottom: solid green;">
+      <div class="item-details grid has-text-white text mb-2" style="text-shadow: 1px 1px black">
+        <p class="cell">{{this.design}}</p>
+        <p class="cell">Size: {{this.size}}</p>
+        <p class="cell">Price: ${{this.price}}</p>
+        <p class="cell">Quantity: {{this.quantity}}</p>
+        <p class="cell">Subtotal: ${{subtotal}}</p>
+        <form>
+          <input type="hidden" id="cartitem_id{{this.id}}" value={{this.id}} />
+          <button class="remove-btn button is-danger is-dark is-small" type="button" data-id="{{this.id}}">Delete</button>
+        </form>
       </div>
+    </div>
+    {{/each}}
 
-      <div class="cart-summary">
-        
-        <h3 class="title is-4">Total: ${{total}}</h3>
-        <form class="checkoutForm">
-        <button  class="button is-info is-light" type="button"><a href="/checkout/{{total}}">Checkout</a></button>
-        
-    </form>
-      </div>
     {{else}}
-      <div class="empty-cart title is-4">
-        <p>Your cart is empty!</p>
-      </div>
+    <div class="empty-cart title is-4">
+      <p>Your cart is empty!</p>
+    </div>
     {{/if}}
-    <a href="/"><button class="button">Continue shopping</button></a>
+  </div>
+
+  <div class="cart-summary column is-one-fifth m-6" style="border: solid green;">
+    <h3 class="title is-4">Cart Total: ${{total}}</h3>
+    <form class="checkoutForm">
+      <button class="button is-info is-light is-fullwidth" type="button"><a href="/checkout/{{total}}">Checkout</a></button>
+    </form>
+    <a href="/"><button class="button is-fullwidth">Continue shopping</button></a>
+  </div>
+
 </div>
 
-  <script src="/js/delFromCart.js"></script>
-
+<script src="/js/delFromCart.js"></script>

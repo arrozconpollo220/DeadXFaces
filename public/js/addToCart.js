@@ -15,7 +15,7 @@ const addToCartProcess = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace(`/`);
+            document.location.replace(`/cart`);
         } else {
             alert('Failed to add new clothing item.');
         }

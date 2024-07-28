@@ -1,34 +1,40 @@
 {{!-- HTML for the sign up view --}}
 <div>
-    <h3>Sign Up</h3>
+    <h3 class="title is-2">Sign Up</h3>
 </div>
-<div style="width: 36rem;">
-    <h5>Sign up for a new account:</h5>
-    <div>
-        <form class="signup-form">
-            <div>
-                <label for="name-input">Name: </label>
+<div class="columns mt-6">
+    <div class="column is-one-quarter">
+        <img src="/images/dollasign.webp" alt="dxf dollar sign logo" style="width: 75%;">
+    </div>
+    <div style="width: 36rem;">
+        <h5 class="title is-5 mt-4 mb-2">Sign up for a new account:</h5>
+        <div>
+            <form class="signup-form">
                 <div>
-                    <input type="text" id="username-input" />
+                    <label for="name-input">Name: </label>
+                    <div>
+                        <input type="text" id="username-input" class="input mb-2" />
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label for="email-input">Email: </label>
                 <div>
-                    <input type="text" id="email-input" />
+                    <label for="email-input">Email: </label>
+                    <div>
+                        <input type="text" id="email-input" class="input mb-2" />
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label for="password-input">Password: </label>
                 <div>
-                    <input type="password" id="password-input" />
+                    <label for="password-input">Password: </label>
+                    <div>
+                        <input type="password" id="password-input" class="input mb-2" />
+                    </div>
                 </div>
-            </div>
-            <div class="d-grid gap-2 d-md-block mt-4">
-                <button type="submit">Sign Up!</button>
-                <a href="/login"><button type="button">Login instead</button></a>
-            </div>
-        </form>
+                <div>
+                    <button type="submit" class="button mt-5">Sign Up!</button>
+                    <br>
+                    <a href="/login"><button type="button" class="mt-2">Login instead</button></a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

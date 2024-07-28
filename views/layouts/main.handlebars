@@ -22,31 +22,29 @@
       </a>
     </div>
 
-
-
     <div class="navbar-menu" id="nav-links">
       <div class="navbar-start is-flex-direction-column">
         <a href="/">
           <i class="fas fa-home fa-sm" style="color: #FAFAFA;"></i>
-        <span>Home</span>
+          <span>Home</span>
         </a>
-        
+
         {{#if isAdmin}}
         <a href="../additem">
-        <i class="fa-regular fa-user fa-sm"style="color: #FAFAFA;"></i>
-        <span>Add Item</span>
+          <i class="fa-regular fa-user fa-sm" style="color: #FAFAFA;"></i>
+          <span>Add Item</span>
         </a>
         {{/if}}
 
         {{#if loggedIn}}
         <a href="/" id="logout">
-        <i class="fa-regular fa-user fa-sm"style="color: #FAFAFA;"></i>
-        <span>Logout</span>
+          <i class="fa-regular fa-user fa-sm" style="color: #FAFAFA;"></i>
+          <span>Logout</span>
         </a>
         {{else}}
         <a href="../login">
-        <i class="fa-regular fa-user fa-sm"style="color: #FAFAFA;"></i>
-        <span>Login</span>
+          <i class="fa-regular fa-user fa-sm" style="color: #FAFAFA;"></i>
+          <span>Login</span>
         </a>
         {{/if}}
 
@@ -59,33 +57,33 @@
 
         <a href="https://www.tiktok.com/@deadfacesdollasigns">
           <i class="fa-brands fa-tiktok" style="color: #FAFAFA;"></i>
-        <span>TikTok</span>
+          <span>TikTok</span>
         </a>
 
         <a href="https://www.instagram.com/deadxfaces?igsh=MjljZnYzd2FvaTl3">
           <i class="fa-brands fa-instagram" style="color: #FAFAFA;"></i>
-        <span>Instagram</span>
+          <span>Instagram</span>
         </a>
 
-        <a href="/cart"> 
+        <a href="/cart">
           <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-lg" style=" color: #FAFAFA;"></i>
           <span>Cart</span>
         </a>
-      {{/if}}
+        {{/if}}
 
-
-
-
-         
       </div>
     </div>
   </nav>
 
   <div class='flex-column'>
-    <main class='container container-fluid mt-5'>
+    <main class='container container-fluid mt-5' style="height: 55%; max-height: 55%; overflow-y: auto; overflow-x: hidden;">
       {{{body}}}
     </main>
   </div>
+
+  <footer>
+    <p class="mt-6" style="text-align: center;">An MMDR Website</p>
+  </footer>
 
   <script src="/js/logout.js"></script>
 </body>

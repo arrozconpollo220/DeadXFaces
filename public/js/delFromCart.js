@@ -2,7 +2,7 @@ const deleteFromCartProcess = async (event) => {
 
     event.preventDefault();
 
-    const cartitem_id = document.querySelector('#cartitem_id').value;
+    const cartitem_id = event.target.getAttribute('data-id');
 
     if (cartitem_id) {
         const response = await fetch(`/api/cart/delete/${cartitem_id}`, {
@@ -11,13 +11,13 @@ const deleteFromCartProcess = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace(`/`);
+            document.location.replace(`/cart`);
         } else {
             alert('Failed to delete item.');
         }
     }
 }
 
-document
-    .querySelector('.remove-btn')
-    .addEventListener('click', deleteFromCartProcess);
+document.querySelectorAll('.remove-btn').forEach(btn => {
+    btn.addEventListener('click', deleteFromCartProcess);
+  });

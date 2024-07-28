@@ -1,9 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css";
 
-header {
-
-}
-
 header img {
   flex-wrap: wrap;
   align-content: space-around;
@@ -15,7 +11,7 @@ header img {
 
 body {
     flex-wrap: wrap;
-    align-content: center;
+    align-content: top;
     position: relative;
     height: 100%;
     width: 100vw;

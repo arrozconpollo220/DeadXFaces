@@ -92,9 +92,15 @@ router.get('/success', async (req, res) => {
   const user = userData.get({ plain: true });
 
     //Resets the cart for additional purchases
-    await req.session.save(() => {
-      req.session.currentCartId = Math.floor(Math.random() * 999999999);
-      req.session.cartTotal = 0;
+    await new Promise((resolve, reject) => {
+      req.session.save((err) => {
+        if (err) {
+          return reject(err);
+        }
+        req.session.currentCartId = Math.floor(Math.random() * 999999999);
+        req.session.cartTotal = 0;
+        resolve();
+      });
     });
 
   res.render('success', {

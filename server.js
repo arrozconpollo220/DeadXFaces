@@ -74,7 +74,7 @@ app.post('/upload', async (req, res) => {
 
 
 // Stripe checkout
-const YOUR_DOMAIN = 'http://localhost:3001' || 'https://deadxfaces.onrender.com';
+const YOUR_DOMAIN = 'https://deadxfaces.onrender.com';
 app.get('/checkout/:total', async (req, res) => {
   //Push
   const session = await stripe.checkout.sessions.create({

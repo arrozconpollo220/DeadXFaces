@@ -80,8 +80,28 @@ body {
 
   }
 
-
-
   span {
-    color:#4E915D
+    color:#4E915D;
   }
+
+  #instead {
+   color: #4E915D;
+   font-weight: 900;
+   font-size: 27px;
+   text-shadow: 3px 3px #034606;
+  }
+
+  #instead2 {
+    color: #4E915D;
+    font-weight: 900;
+    font-size: 27px;
+    text-shadow: 3px 3px #034606;
+   }
+
+   .login-form {
+    color: white;
+   }
+   
+   .signup-form {
+    color: white;
+   }

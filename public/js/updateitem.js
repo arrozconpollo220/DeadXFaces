@@ -17,7 +17,7 @@ const updateProcess = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace(`../update/${clothing_id}`);
+            document.location.replace(`../update/${item_id}`);
         } else {
             alert('Failed to update item.');
         }

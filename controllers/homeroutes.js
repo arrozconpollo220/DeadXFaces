@@ -90,16 +90,18 @@ router.get('/success', async (req, res) => {
     res.json(err);
   });
   const user = userData.get({ plain: true });
+
+    //Resets the cart for additional purchases
+    await req.session.save(() => {
+      req.session.currentCartId = Math.floor(Math.random() * 999999999);
+      req.session.cartTotal = 0;
+    });
+
   res.render('success', {
     user,
     loggedIn: req.session.loggedIn,
     currUserId: req.session.currentUserId,
     isAdmin: req.session.isAdmin
-  });
-  //Resets the cart for additional purchases
-  req.session.save(() => {
-    req.session.currentCartId = Math.floor(Math.random() * 999999999);
-    req.session.cartTotal = 0;
   });
 });
 

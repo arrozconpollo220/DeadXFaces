@@ -13,7 +13,6 @@ router.post('/add', async (req, res) => {
         });
 
         res.status(200).json(dbAddItemData);
-        // res.render('../');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

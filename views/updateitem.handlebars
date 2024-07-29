@@ -1,6 +1,6 @@
 <h2 class="title is-2">Update item</h2>
 {{#if isAdmin}}
-<div class="columns is-desktop">
+<div class="columns is-desktop" style="max-height: 450px">
     <div class="column m-5 ">
         <h3 class="title is-4">Update image: </h3>
         <img src={{singleItem.image_loc}} style="height: 45%;" class="m-2"/>
@@ -64,6 +64,9 @@
                 <button type="submit" class="button is-success">Add Size</button>
                 <button type="button" class="delete-size button is-danger">Delete Size</button>
             </form>
+        </div>
+        <div>
+            <button type="button" class="button is-warning mt-5"><a href="/singleItem/{{singleItem.id}}">Return to Item</a></button>
         </div>
     </div>
 </div>

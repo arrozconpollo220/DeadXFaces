@@ -11,7 +11,6 @@ router.post('/add', async (req, res) => {
         });
 
         res.status(200).json(dbAddSizeData);
-        // res.render('../');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -33,7 +32,6 @@ router.delete('/delete', async (req, res) => {
             res.status(404).json({ message: 'No sizes found for this clothing item!' });
         } else {
             res.status(200).json(dbDeleteSizeData);
-            // res.render('./');
         }
 
     } catch (err) {

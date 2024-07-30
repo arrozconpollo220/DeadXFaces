@@ -47,7 +47,15 @@
   https://deadxfaces.onrender.com/
 
   ## Screenshots
-  
+![DeadFace1](https://github.com/user-attachments/assets/a609dc31-d26b-4543-b375-960ed4d9be43)
+![DeadFace2](https://github.com/user-attachments/assets/f62605fe-a5af-4776-af37-f71732da8fe5)
+![DeadFace3](https://github.com/user-attachments/assets/405fe08b-cb56-40d8-ba1f-e6844696969d)
+![DeadFace4](https://github.com/user-attachments/assets/47d9e3ba-a909-4fc4-8f39-71d9cf8d111e)
+![DeadFace5](https://github.com/user-attachments/assets/2f10e883-a8f9-4d22-ac2b-bc12a9400beb)
+![DeadFace6](https://github.com/user-attachments/assets/bf7e42b7-ae80-414d-b1ca-5cad98a2766e)
+![DeadFace7](https://github.com/user-attachments/assets/6f96ff1b-a5f6-4705-87b7-0d0fae56d911)
+![DeadFace8](https://github.com/user-attachments/assets/62937c3f-e7a6-46c0-9b83-ddca1a7c5438)
+
 
   ## Questions?
   Any questions regarding this project can be answered by contacting me through my GitHub Profile at https://github.com/arrozconpollo220 or at my email address at alexander.rodriguez2121@gmail.com. 

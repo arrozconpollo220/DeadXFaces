@@ -11,70 +11,57 @@
 
 <body>
   <header class="header">
-    <img src="/images/Rebel-cropped.svg" alt="site logo" style="max-height: 236px">
+    <a href="/"><img src="/images/Rebel-cropped.svg" alt="site logo" style="max-height: 236px"></a>
 
   </header>
-
-  <nav class="navbar has-shadow has-background-primary-00">
-    <div class="navbar-brand">
-      <a class="navbar-item">
-
+  {{!-- Left Side Menu --}}
+  <div class="navbar has-shadow has-background-primary-00" id="nav-links">
+    <div class="navbar-brand is-flex-direction-column">
+      <a class="navbar-item" href="/">
+        <i class="fas fa-home fa-sm" style="color: #FAFAFA;"></i>
+        <span>Home</span>
       </a>
+
+      {{#if isAdmin}}
+      <a class="navbar-item" href="../additem">
+        <i class="fa-regular fa-user fa-sm" style="color: #FAFAFA;"></i>
+        <span>Add Item</span>
+      </a>
+      {{/if}}
+
+      {{#if loggedIn}}
+      <a class="navbar-item" href="/" id="logout">
+        <i class="fa-regular fa-user fa-sm" style="color: #FAFAFA;"></i>
+        <span>Logout</span>
+      </a>
+      {{else}}
+      <a class="navbar-item" href="../login">
+        <i class="fa-regular fa-user fa-sm" style="color: #FAFAFA;"></i>
+        <span>Login</span>
+      </a>
+      {{/if}}
     </div>
 
-    <div class="navbar-menu" id="nav-links">
-      <div class="navbar-start is-flex-direction-column">
-        <a href="/">
-          <i class="fas fa-home fa-sm" style="color: #FAFAFA;"></i>
-          <span>Home</span>
-        </a>
+    {{!-- Right Side Menu --}}
+    <div class="navbar-end is-flex-direction-column">
+      {{!-- social media links --}}
+      <a class="navbar-item" href="https://www.tiktok.com/@deadxfaces">
+        <i class="fa-brands fa-tiktok" style="color: #FAFAFA;"></i>
+        <span>TikTok</span>
+      </a>
 
-        {{#if isAdmin}}
-        <a href="../additem">
-          <i class="fa-regular fa-user fa-sm" style="color: #FAFAFA;"></i>
-          <span>Add Item</span>
-        </a>
-        {{/if}}
-
-        {{#if loggedIn}}
-        <a href="/" id="logout">
-          <i class="fa-regular fa-user fa-sm" style="color: #FAFAFA;"></i>
-          <span>Logout</span>
-        </a>
-        {{else}}
-        <a href="../login">
-          <i class="fa-regular fa-user fa-sm" style="color: #FAFAFA;"></i>
-          <span>Login</span>
-        </a>
-        {{/if}}
-
-
-        </a>
-      </div>
-
-
-      <div class="navbar-end is-flex-direction-column">
-
-        {{!-- social media links --}}
-        <a href="https://www.tiktok.com/@deadxfaces">
-          <i class="fa-brands fa-tiktok" style="color: #FAFAFA;"></i>
-          <span>TikTok</span>
-        </a>
-
-        <a href="https://www.instagram.com/deadxfaces?igsh=MjljZnYzd2FvaTl3">
-          <i class="fa-brands fa-instagram" style="color: #FAFAFA;"></i>
-          <span>Instagram</span>
-        </a>
-        {{#if loggedIn}}
-        <a href="/cart">
-          <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-lg" style=" color: #FAFAFA;"></i>
-          <span>Cart</span>
-        </a>
-        {{/if}}
-
-      </div>
+      <a class="navbar-item" href="https://www.instagram.com/deadxfaces?igsh=MjljZnYzd2FvaTl3">
+        <i class="fa-brands fa-instagram" style="color: #FAFAFA;"></i>
+        <span>Instagram</span>
+      </a>
+      {{#if loggedIn}}
+      <a class="navbar-item" href="/cart">
+        <i class="fa-solid fa-cart-plus fa-flip-horizontal fa-lg" style=" color: #FAFAFA;"></i>
+        <span>Cart</span>
+      </a>
+      {{/if}}
     </div>
-  </nav>
+  </div>
 
   <div class='flex-column'>
     <main class='container container-fluid mt-5'

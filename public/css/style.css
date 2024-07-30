@@ -24,22 +24,7 @@ body {
     z-index: -2;
   }
 
-  /* main {
-    flex-wrap: wrap;
-    align-content: center;
-    position: relative;
-    height: 100%;
-    width: 100vw;
-    width: ;
-
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: black;
-
-    z-index: -2;
-  } */
-  
-  swiper-container{
+swiper-container{
     width: 100vw;
     max-height: 50%;
     padding-top: 0px;
